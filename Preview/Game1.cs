@@ -53,20 +53,12 @@ public class Game1 : Game
         {
             if (isPressing == false)
             {
-                startPoint = new Point(
-                    Math.Clamp(m.Position.X, 0, _graphics.GraphicsDevice.Viewport.Width - 1),
-                    Math.Clamp(m.Position.Y, 0, _graphics.GraphicsDevice.Viewport.Height - 1));
+                startPoint = new Point(m.Position.X, m.Position.Y);
                 isPressing = true;
             }
 
-            endPoint = new Point(
-                Math.Clamp(m.Position.X, 0, _graphics.GraphicsDevice.Viewport.Width - 1),
-                Math.Clamp(m.Position.Y, 0, _graphics.GraphicsDevice.Viewport.Height - 1)
-            );
+            endPoint = new Point(m.Position.X,m.Position.Y);
             radius = (int)(startPoint - endPoint).ToVector2().Length();
-            radius = Math.Clamp(radius, 0, Math.Min(
-                Math.Min(startPoint.X, _graphics.GraphicsDevice.Viewport.Width - startPoint.X),
-                Math.Min(startPoint.Y, _graphics.GraphicsDevice.Viewport.Height - 1 - startPoint.Y)));
         }
 
         if (m.LeftButton == ButtonState.Released)
