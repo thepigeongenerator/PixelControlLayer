@@ -37,13 +37,10 @@ public class PixelControlLayer
 
         //draw the texture
         spriteBatch.Draw(texture, Vector2.Zero, Color.White);
-
-        //finally, clear the buffer
-        ClearBuffer();
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private void ClearBuffer()
+    public void ClearBuffer()
     {
         buffer = new Color[Width * Height];
     }

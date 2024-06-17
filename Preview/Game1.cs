@@ -57,20 +57,19 @@ public class Game1 : Game
                 isPressing = true;
             }
 
-            endPoint = new Point(m.Position.X,m.Position.Y);
+            //_pixelControlLayer.SetLine(startPoint.X, startPoint.Y, endPoint.X, endPoint.Y, Color.White);
+            //_pixelControlLayer.SetBox(startPoint.X, startPoint.Y, endPoint.X, endPoint.Y, Color.White);
+            _pixelControlLayer.SetCircle(startPoint.X, startPoint.Y, radius, Color.White);
+
+            endPoint = new Point(m.Position.X, m.Position.Y);
             radius = (int)(startPoint - endPoint).ToVector2().Length();
         }
 
         if (m.LeftButton == ButtonState.Released)
         {
-            if (isPressing == true)
-            {
-                startPoint = Point.Zero;
-                endPoint = Point.Zero;
-                isPressing = false;
-            }
+            startPoint = Point.Zero;
+            endPoint = Point.Zero;
         }
-
         // TODO: Add your update logic here
 
         base.Update(gameTime);
@@ -80,16 +79,12 @@ public class Game1 : Game
     {
         GraphicsDevice.Clear(Color.Black);
 
-        _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
-        if (isPressing)
-        {
-            //_pixelControlLayer.SetLine(startPoint.X, startPoint.Y, endPoint.X, endPoint.Y, Color.White);
-            //_pixelControlLayer.SetBox(startPoint.X, startPoint.Y, endPoint.X, endPoint.Y, Color.White);
-            _pixelControlLayer.SetCircle(startPoint.X, startPoint.Y, radius, Color.White);
-        }
+        _spriteBatch.Begin();
+
         _pixelControlLayer.Draw(_spriteBatch);
+
         _spriteBatch.End();
-        // TODO: Add your drawing code here
+        _pixelControlLayer.ClearBuffer();
 
         base.Draw(gameTime);
     }
