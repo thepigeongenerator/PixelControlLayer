@@ -15,13 +15,9 @@ public static class ExtSetPoint
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void SetPoint(this PixelControlLayer pcl, int x, int y, Color colour)
     {
-#if !QUTIL_MONOGAME_RENDER_DISABLE_OUT_OF_RANGE_PROTECTION
         if (x >= 0 && x < pcl.Width && y >= 0 && y < pcl.Height)
         {
             pcl.buffer[y * pcl.Width + x] = colour;
         }
-#else
-            pcl.buffer[y * pcl.Width + x] = colour;
-#endif
     }
 }
