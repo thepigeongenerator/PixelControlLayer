@@ -57,18 +57,20 @@ public class Game1 : Game
                 isPressing = true;
             }
 
-            //_pixelControlLayer.SetLine(startPoint.X, startPoint.Y, endPoint.X, endPoint.Y, Color.White);
-            //_pixelControlLayer.SetBox(startPoint.X, startPoint.Y, endPoint.X, endPoint.Y, Color.White);
-            _pixelControlLayer.SetCircle(startPoint.X, startPoint.Y, radius, Color.White);
 
             endPoint = new Point(m.Position.X, m.Position.Y);
             radius = (int)(startPoint - endPoint).ToVector2().Length();
+
+            //_pixelControlLayer.SetLine(startPoint.X, startPoint.Y, endPoint.X, endPoint.Y, Color.White);
+            //_pixelControlLayer.SetBox(startPoint.X, startPoint.Y, endPoint.X, endPoint.Y, Color.White);
+            _pixelControlLayer.SetCircle(startPoint.X, startPoint.Y, radius, Color.White);
         }
 
-        if (m.LeftButton == ButtonState.Released)
+        if (isPressing == true && m.LeftButton == ButtonState.Released)
         {
             startPoint = Point.Zero;
             endPoint = Point.Zero;
+            isPressing = false;
         }
         // TODO: Add your update logic here
 
