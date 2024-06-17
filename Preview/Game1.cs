@@ -61,10 +61,10 @@ public class Game1 : Game
             endPoint = new Point(m.Position.X, m.Position.Y);
             radius = (int)(startPoint - endPoint).ToVector2().Length();
 
-            //_pixelControlLayer.SetLine(startPoint.X, startPoint.Y, endPoint.X, endPoint.Y, Color.Green);
-            _pixelControlLayer.SetBox(startPoint.X, startPoint.Y, endPoint.X, endPoint.Y, Color.Blue);
-            _pixelControlLayer.SetPoint(startPoint.X, startPoint.Y, Color.Red);
             _pixelControlLayer.SetCircle(startPoint.X, startPoint.Y, radius, Color.White);
+            _pixelControlLayer.SetBox(startPoint.X, startPoint.Y, endPoint.X, endPoint.Y, Color.Blue);
+            _pixelControlLayer.SetLine(startPoint.X, startPoint.Y, endPoint.X, endPoint.Y, Color.Green);
+            _pixelControlLayer.SetPoint(startPoint.X, startPoint.Y, Color.Red);
         }
 
         if (isPressing == true && m.LeftButton == ButtonState.Released)
