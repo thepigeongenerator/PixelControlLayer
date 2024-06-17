@@ -5,7 +5,7 @@ namespace QUtil.MonoGame.Render;
 
 public static class ExtSetLine
 {
-    /// <param name="pcl">the pixel control layer to set the circle to</param>
+    /// <param name="pcl">the pixel control layer to set the line to</param>
     /// <param name="x1">the X coordinate of the start of the line</param>
     /// <param name="y1">the Y coordinate of the start of the line</param>
     /// <param name="x2">the X coordinate of the end of the line</param>

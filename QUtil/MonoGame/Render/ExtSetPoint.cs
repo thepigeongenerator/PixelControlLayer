@@ -5,13 +5,8 @@ namespace QUtil.MonoGame.Render;
 
 public static class ExtSetPoint
 {
-    /// <summary>
-    /// sets a point at a specific location at the screen. Compile with flag <c>QUTIL_MONOGAME_RENDER_DISABLE_OUT_OF_RANGE_PROTECTION</c>
-    /// </summary>
-    /// <param name="pcl"></param>
-    /// <param name="x"></param>
-    /// <param name="y"></param>
-    /// <param name="colour"></param>
+    /// <param name="pcl">the pixel control layer to set the pixel to</param>
+    /// <param name="colour">sets the colour of the pixel</param>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void SetPoint(this PixelControlLayer pcl, int x, int y, Color colour)
     {
