@@ -20,14 +20,19 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 6.0.x
+
+    # set the correct directory
     - name: go to QUtil dir
       run: cd QUtil/
 
+    # compile project
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore True --configuration Release
     - name: Test
       run: dotnet test --no-build True --verbosity normal
+
+    # push nuget repo
     - name: push nuget
-      run: dotnet nuget push "bin/Release/QUtil.MonoGame.Render.1.0.0.nupkg" --source "github"
+      run: dotnet nuget push "bin/Release/QUtil.MonoGame.Render.1.0.0.nupkg" --api-key ${GITHUB_TOKEN} --source "github"
