@@ -21,20 +21,16 @@ jobs:
       with:
         dotnet-version: 6.0.x
 
-    # set the correct directory
-    - name: go to QUtil dir
-      run: cd QUtil/
-
     # compile project
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore True --configuration Release
+      run: dotnet build --configuration Release --no-restore True
     - name: Test
       run: dotnet test --no-build True --verbosity normal
 
     # push nuget repo
     - name: push nuget
-      run: dotnet nuget push "bin/Release/QUtil.MonoGame.Render.1.0.0.nupkg" --api-key ${GITHUB_TOKEN} --source "https://nuget.pkg.github.com/thepigeongenerator/index.json" --skip-duplicate --no-symbols True
+      run: dotnet nuget push "QUtil/bin/Release/QUtil.MonoGame.Render.1.0.0.nupkg" --api-key ${GITHUB_TOKEN} --source "https://nuget.pkg.github.com/thepigeongenerator/index.json" --skip-duplicate --no-symbols True
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
