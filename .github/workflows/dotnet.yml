@@ -35,6 +35,6 @@ jobs:
 
     # push nuget repo
     - name: push nuget
-      run: dotnet nuget push "bin/Release/QUtil.MonoGame.Render.1.0.0.nupkg" --api-key ${GITHUB_TOKEN} --source "https://nuget.pkg.github.com/thepigeongenerator/index.json" --skip-duplicate --no-symbols
+      run: dotnet nuget push "bin/Release/QUtil.MonoGame.Render.1.0.0.nupkg" --api-key ${GITHUB_TOKEN} --source "https://nuget.pkg.github.com/thepigeongenerator/index.json" --skip-duplicate --no-symbols True
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
