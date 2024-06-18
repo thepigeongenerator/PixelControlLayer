@@ -34,5 +34,7 @@ jobs:
       run: dotnet test --no-build True --verbosity normal
 
     # push nuget repo
+    - name: auth nuget
+      run: dotnet nuget add source --username USERNAME --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/thepigeongenerator/index.json"
     - name: push nuget
-      run: dotnet nuget push "bin/Release/QUtil.MonoGame.Render.1.0.0.nupkg" --api-key ${GITHUB_TOKEN} --source "https://nuget.pkg.github.com/thepigeongenerator/index.json" --skip-duplicate --no-symbols
+      run: dotnet nuget push "bin/Release/QUtil.MonoGame.Render.1.0.0.nupkg" --api-key ${GITHUB_TOKEN} --source "github" --skip-duplicate --no-symbols
