@@ -1,13 +1,14 @@
 # `ThePigeonGenerator.MonoGame.PixelControlLayer`
 
-## Default Extensions
 
-- `SetPoint`(`this` [`PixelControlLayer`](./docs/PixelControlLayer.md) pcl, `int` x, `int` y, [`Color`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Color.html) colour)
-- `SetLine`(`this` [`PixelControlLayer`](./docs/PixelControlLayer.md) pcl, `int` x1, `int` y1, `int` x2, `int` y2, [`Color`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Color.html) colour)
-- `SetBox`(`this` [`PixelControlLayer`](./docs/PixelControlLayer.md) pcl, `int` x1, `int` y1, `int` x2, `int` y2, [`Color`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Color.html) colour)
-- `SetCircle`(`this` [`PixelControlLayer`](./docs/PixelControlLayer.md) pcl, `int` centreX, `int` centreY, [`Color`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Color.html) colour)
+| Default\* Extensions                                                                                                                                                                                   |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `SetPoint`(`this` [`PixelControlLayer`](./docs/PixelControlLayer.md) pcl, `int` x, `int` y, [`Color`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Color.html) colour)                      |
+| `SetLine`(`this` [`PixelControlLayer`](./docs/PixelControlLayer.md) pcl, `int` x1, `int` y1, `int` x2, `int` y2, [`Color`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Color.html) colour) |
+| `SetBox`(`this` [`PixelControlLayer`](./docs/PixelControlLayer.md) pcl, `int` x1, `int` y1, `int` x2, `int` y2, [`Color`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Color.html) colour)  |
+| `SetCircle`(`this` [`PixelControlLayer`](./docs/PixelControlLayer.md) pcl, `int` centreX, `int` centreY, [`Color`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Color.html) colour)         |
 
-It is possible to add more extensions yourself; read more about the different components you're able to modify in [`PixelControlLayer`](./docs/PixelControlLayer.md)
+*\*It is possible to add more extensions yourself; read more about the different components you're able to modify in [`PixelControlLayer`](./docs/PixelControlLayer.md)*
 
 ## Example
 
