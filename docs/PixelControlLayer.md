@@ -15,5 +15,5 @@
 ## methods
 | Definition                                                                                                                    | Summary                                   |
 | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-- `void` `Draw`([`SpriteBatch`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html) `spriteBatch`) | Draws `texture` using `spritebatch`       |
-- `void` `ClearBuffer`()                                                                                                        | Redefines `buffer` as a means to clear it |
+| `void` `Draw`([`SpriteBatch`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.SpriteBatch.html) `spriteBatch`) | Draws `texture` using `spritebatch`       |
+| `void` `ClearBuffer`()                                                                                                        | Redefines `buffer` as a means to clear it |
