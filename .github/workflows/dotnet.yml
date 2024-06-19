@@ -28,9 +28,10 @@ jobs:
       - name: test the build
         run: dotnet test --no-build True --verbosity normal
 
-      # push nuget repo (package is created on build as the configuration in the csproj file)
-      - name: add nuget package to repo
+      # push the package to both repos
+      - name: push nuget package to nuget repo
+        run: dotnet nuget push "QUtil/bin/Release/QUtil.MonoGame.Render*.nupkg" --api-key ${{ secrets.NUGET_PACKAGE_KEY }} --source "https://api.nuget.org/v3/index.json" --skip-duplicate --no-symbols
+      - name: push nuget package to github repo
         run: |
-          if [[ -z "${{ secrets.PACKAGE_MANAGEMENT }}" ]]; then echo -e "\033[91no token was set!\033[0m" && exit -1; fi
-          dotnet nuget add source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --name "github" --username ${{ github.repository_owner }} --password ${{ secrets.PACKAGE_MANAGEMENT }} --store-password-in-clear-text
+          dotnet nuget add source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --name "github" --username ${{ github.repository_owner }} --password ${{ secrets.GH_PACKAGE_KEY }} --store-password-in-clear-text
           dotnet nuget push "QUtil/bin/Release/QUtil.MonoGame.Render*.nupkg" --source "github" --skip-duplicate --no-symbols
