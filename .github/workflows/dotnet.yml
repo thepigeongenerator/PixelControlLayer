@@ -24,7 +24,7 @@ jobs:
       - name: restore dependencies
         run: dotnet restore
       - name: build the project
-        run: dotnet build --configuration Release --no-restore True
+        run: dotnet build --configuration Release --no-restore True -warnaserror
       - name: test the build
         run: dotnet test --no-build True --verbosity normal
 
