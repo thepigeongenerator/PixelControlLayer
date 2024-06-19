@@ -7,7 +7,19 @@
 - `SetLine(this PixelControlLayer pcl, int x1, int y1, x2, y2, Color colour)`
 - `SetPoint(this PixelControlLayer pcl, int x, int y, Color colour)`
 
-## Examples
+It is possible to add more extensions yourself; read more about the different components you're able to modify in [`PixelControlLayer`](./docs/PixelControlLayer.md)
+
+## Example
+
+```cs
+protected override void Initialize()
+{
+    // define the pixel control layer using the graphics device to set the correct internal texture size
+    _pixelControlLayer = new PixelControlLayer(_graphics.GraphicsDevice);
+
+    base.Initialize();
+}
+```
 
 ```cs
 protected override void Update()
