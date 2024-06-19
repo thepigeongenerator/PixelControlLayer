@@ -2,7 +2,8 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using ThePigeonGenerator.MonoGame.Render;
+
+namespace ThePigeonGenerator.MonoGame.Render;
 
 public static class ExtSetBox
 {
