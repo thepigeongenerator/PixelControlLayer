@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System;
+using System.Runtime.CompilerServices;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -7,7 +8,7 @@ namespace ThePigeonGenerator.MonoGame.Render;
 public class PixelControlLayer
 {
     public readonly Texture2D texture;
-    public Color[] buffer;
+    public readonly Color[] buffer;
 
 
     /// <summary>
@@ -16,7 +17,7 @@ public class PixelControlLayer
     public PixelControlLayer(GraphicsDevice graphicsDevice)
     {
         texture = new(graphicsDevice, graphicsDevice.Viewport.Width, graphicsDevice.Viewport.Height);
-        ClearBuffer();
+        buffer = new Color[Width * Height];
     }
 
     /// <summary>
@@ -25,7 +26,7 @@ public class PixelControlLayer
     public PixelControlLayer(GraphicsDevice graphicsDevice, int width, int height)
     {
         texture = new(graphicsDevice, width, height);
-        ClearBuffer();
+        buffer = new Color[Width * Height];
     }
 
     public int Height
@@ -55,6 +56,6 @@ public class PixelControlLayer
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void ClearBuffer()
     {
-        buffer = new Color[Width * Height];
+        Array.Clear(buffer);
     }
 }
