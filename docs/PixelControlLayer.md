@@ -1,6 +1,7 @@
 # `ThePigeonGenerator.MonoGame.Render.PixelControlLayer`
 
 `PixelControlLayer`([`GraphicsDevice`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.GraphicsDevice.html))
+`PixelControlLayer`([`GraphicsDevice`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.GraphicsDevice.html), `int`, `int`)
 
 ## fields
 

@@ -17,6 +17,9 @@ protected override void Initialize()
     // define the pixel control layer using the graphics device to set the correct internal texture size
     _pixelControlLayer = new PixelControlLayer(_graphics.GraphicsDevice);
 
+    // OR: define your own size
+    _pixelControlLayer = new PixelControlLayer(_graphics.GraphicsDevice, 64, 64);
+
     base.Initialize();
 }
 ```
@@ -38,7 +41,7 @@ protected override void Draw(GameTime gameTime)
 
     _spriteBatch.Begin();
 
-    _pixelControlLayer.Draw(_spriteBatch);
+    _pixelControlLayer.Draw(_spriteBatch); // assumes the default position of (0, 0)
 
     _spriteBatch.End();
     _pixelControlLayer.ClearBuffer(); // clear the internal buffer *after* drawing, otherwise it'll fail to draw
