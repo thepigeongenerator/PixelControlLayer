@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace QUtil.MonoGame.Render;
+namespace ThePigeonGenerator.MonoGame.Render;
 
 public class PixelControlLayer
 {

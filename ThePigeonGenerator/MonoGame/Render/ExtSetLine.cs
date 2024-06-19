@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Xna.Framework;
 
-namespace QUtil.MonoGame.Render;
+namespace ThePigeonGenerator.MonoGame.Render;
 
 public static class ExtSetLine
 {

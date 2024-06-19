@@ -30,8 +30,8 @@ jobs:
 
       # push the package to both repos
       - name: push nuget package to nuget repo
-        run: dotnet nuget push "QUtil/bin/Release/QUtil.MonoGame.Render*.nupkg" --api-key ${{ secrets.NUGET_PACKAGE_KEY }} --source "https://api.nuget.org/v3/index.json" --skip-duplicate --no-symbols
+        run: dotnet nuget push "ThePigeonGenerator/bin/Release/ThePigeonGenerator.MonoGame.Render*.nupkg" --api-key ${{ secrets.NUGET_PACKAGE_KEY }} --source "https://api.nuget.org/v3/index.json" --skip-duplicate --no-symbols
       - name: push nuget package to github repo
         run: |
           dotnet nuget add source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --name "github" --username ${{ github.repository_owner }} --password ${{ secrets.GH_PACKAGE_KEY }} --store-password-in-clear-text
-          dotnet nuget push "QUtil/bin/Release/QUtil.MonoGame.Render*.nupkg" --source "github" --skip-duplicate --no-symbols
+          dotnet nuget push "ThePigeonGenerator/bin/Release/ThePigeonGenerator.MonoGame.Render*.nupkg" --source "github" --skip-duplicate --no-symbols

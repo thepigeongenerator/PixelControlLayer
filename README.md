@@ -1,4 +1,4 @@
-# QUtil.MonoGame.PixelControlLayer
+# ThePigeonGenerator.MonoGame.PixelControlLayer
 
 ## Default Extensions
 
