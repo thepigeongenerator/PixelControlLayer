@@ -20,7 +20,6 @@ public static class ExtSetBox
         int originY = Math.Min(y1, y2);         //gets the origin in the Y position
         int width = Math.Abs(x1 - x2);          //the absolute width
         int height = Math.Abs(y1 - y2);         //the absolute height
-        int boxIndex = (width * 2) + height;    //the index at which the will be stored
 
         //loop through the X axis of the box drawn
         for (int x = 0; x <= width; x++) // smaller than or equal to, in order to include the last corner
