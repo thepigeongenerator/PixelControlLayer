@@ -7,7 +7,7 @@
 
     <OutputType>Library</OutputType>
     <PackageId>QUtil.MonoGame.Render</PackageId>
-    <PackageDescription>Allows for individual control over the pixels in MonoGame</PackageDescription>
+    <PackageDescription>Allows for individual pixel control over the pixels in MonoGame, extendable with some default drawing functions.</PackageDescription>
     <RepositoryUrl>https://github.com/thepigeongenerator/PixelControlLayer</RepositoryUrl>
     <Version>1.0.1</Version>
     <Authors>thepigeongenerator</Authors>
