@@ -5,32 +5,31 @@ name: .NET
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
-  build:
-
+  verify-build-and-push-nuget:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 6.0.x
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 6.0.x
 
-    # compile project
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --configuration Release --no-restore True
-    - name: Test
-      run: dotnet test --no-build True --verbosity normal
+      # compile & verify project
+      - name: restore dependencies
+        run: dotnet restore
+      - name: build the project
+        run: dotnet build --configuration Release --no-restore True
+      - name: test the build
+        run: dotnet test --no-build True --verbosity normal
 
-    # push nuget repo (package is created on build as the configuration in the csproj file)
-    - name: push nuget
-      run: |
-        dotnet nuget add source --username ${{ github.repository_owner }} --password ${{ secrets.PAT }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
-        dotnet nuget push "QUtil/bin/Release/QUtil.MonoGame.Render*.nupkg" --api-key ${{ secrets.PAT }} --source "github" --skip-duplicate --no-symbols
+      # push nuget repo (package is created on build as the configuration in the csproj file)
+      - name: add nuget package to repo
+        run: |
+          dotnet nuget add source --username ${{ github.repository_owner }} --password ${{ secrets.PACKAGE_MANAGEMENT }} --name "github" "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
+          dotnet nuget push "QUtil/bin/Release/QUtil.MonoGame.Render*.nupkg" --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --skip-duplicate --no-symbols
