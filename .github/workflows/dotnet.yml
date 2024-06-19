@@ -31,6 +31,6 @@ jobs:
       # push nuget repo (package is created on build as the configuration in the csproj file)
       - name: add nuget package to repo
         run: |
-          echo "secrets.PACKAGE_MANAGEMENT: ${{ secrets.PACKAGE_MANAGEMENT }}"
-          dotnet nuget add source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --name "github" --username ${{ github.repository_owner }} --password ${{ secrets.PACKAGE_MANAGEMENT }}
+          if [[ -z "${{ secrets.PACKAGE_MANAGEMENT }}" ]]; then echo -e "\033[91no token was set!\033[0m" && exit -1; fi
+          dotnet nuget add source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --name "github" --username ${{ github.repository_owner }} --password ${{ secrets.PACKAGE_MANAGEMENT }} --store-password-in-clear-text
           dotnet nuget push "QUtil/bin/Release/QUtil.MonoGame.Render*.nupkg" --source "github" --skip-duplicate --no-symbols
