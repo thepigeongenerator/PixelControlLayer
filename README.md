@@ -2,6 +2,15 @@
 
 A library to allow for setting individual pixels in a MonoGame project. Is easily extendable with your own functions for more advanced drawing.
 
+## Installation
+### Windows in Visual Studio:
+1. Follow the steps [here](https://learn.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio#nuget-package-manager).
+2. Search the package namespace seen above.
+### Universal:
+1. Select the [package](https://github.com/thepigeongenerator/PixelControlLayer/pkgs/nuget/ThePigeonGenerator.MonoGame.Render) under the `Packages` tab on the right.
+2. Select the version you'd like to install
+3. Run the command listed above in the directory of the project you wish to install the package in.
+
 | Default*\** Extensions                                                                                                                                                                               |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `SetPoint`(`this` [`PixelControlLayer`](./docs/PixelControlLayer.md) pcl, `int` x, `int` y, [`Color`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Color.html) colour)                      |
