@@ -11,7 +11,7 @@ A library to allow for setting individual pixels in a MonoGame project. Is easil
 2. Select the version you'd like to install
 3. Run the command listed above in the directory of the project you wish to install the package in.
 
-| Default*\** Extensions                                                                                                                                                                               |
+| Default* Extensions                                                                                                                                                                                  |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `SetPoint`(`this` [`PixelControlLayer`](./docs/PixelControlLayer.md) pcl, `int` x, `int` y, [`Color`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Color.html) colour)                      |
 | `SetLine`(`this` [`PixelControlLayer`](./docs/PixelControlLayer.md) pcl, `int` x1, `int` y1, `int` x2, `int` y2, [`Color`](https://docs.monogame.net/api/Microsoft.Xna.Framework.Color.html) colour) |
